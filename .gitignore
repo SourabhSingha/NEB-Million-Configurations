@@ -1,0 +1,23 @@
+# Compiled Fortran executables
+*.out
+a.out
+
+# Fortran module files
+*.mod
+*.o
+
+# Temporary and backup files
+*.tmp
+*~
+*.bak
+
+# LAMMPS output files
+log.lammps
+screen.*
+*.restart
+*.restart.*
+
+# Generated NEB and simulation data
+neb.dat
+dump.*
+*.lammpstrj
