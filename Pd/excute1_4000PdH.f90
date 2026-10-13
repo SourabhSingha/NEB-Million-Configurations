@@ -77,12 +77,12 @@ PROGRAM NEB_calculation
 !~ ZHI=55.165e0
   !!!!
   
-  !StepA: Creation of Ni structure
-  CALL Ni_structure()
+  !StepA: Creation of Pd structure
+  CALL Pd_structure()
   !StepB: Creation of H structure
   CALL H_structure()
-  !StepC Reading Ni coordinates
-  CALL Ni_coordinates()
+  !StepC Reading Pd coordinates
+  CALL Pd_coordinates()
   !StepD Reading H Coordinates
   CALL H_coordinates()
   !Step 1. Read input filenames
@@ -117,7 +117,7 @@ PROGRAM NEB_calculation
   
 CONTAINS
   
-SUBROUTINE Ni_structure()
+SUBROUTINE Pd_structure()
   IMPLICIT NONE
  OPEN(UNIT=2,FILE="NiBulk1.xyz",STATUS="REPLACE")
    
@@ -155,8 +155,8 @@ write(2,*) L*a,L*a,L*a,c,c,c
    end Do
    close(2)
 END SUBROUTINE
-!CALL Ni_coordinates()
-SUBROUTINE Ni_coordinates()
+!CALL Pd_coordinates()
+SUBROUTINE Pd_coordinates()
 IMPLICIT NONE
    character(len=2)::U
    open(unit=2,file="NiBulk1.xyz", status="OLD")
@@ -249,7 +249,7 @@ INTEGER::M
   !Step 2. Store the site occupation in array initial_occupation_vector
   !CALL ReadOccupationVector(initial_occupation_vector,initial_occupation_file) !initial 
   
-  !Inital NIH with occupation_vector
+  !Inital PdH with occupation_vector
 !********************************************************************
 SUBROUTINE initial_occupation_reading()
 IMPLICIT NONE
