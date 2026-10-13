@@ -7,6 +7,8 @@ This repository contains Fortran 90 programs and LAMMPS input files for automate
 The workflow uses occupation vectors to define configurations, LAMMPS to relax initial and final structures, and Fortran and Bash scripts to automate configuration processing and NEB calculations.
 
 ## Repository Structure
+
+text
 NEB-Million-Configurations/
 ├── README.md
 ├── Ni/
@@ -34,29 +36,29 @@ NEB-Million-Configurations/
 
 The `Ni/` directory contains the files used for the NiH workflow.
 
-(i) NiAlH_jea.eam.alloy`: EAM/alloy potential file used for the NiH system.
-(ii) NEB_OCCUP1.txt`: Occupation-vector data used in configuration generation.
-(iii) occupation_in_1NNN1.txt`: Occupation-related input data.
-(iv) in_NIH_initial.eam`: LAMMPS input for initial-structure relaxation.
-(v) in_NIH_initial1.eam`: LAMMPS input for final-structure relaxation.
-(vi) input_NEB`: LAMMPS input for NEB calculations.
-(vii) print_occupation_4000_files_final.f90`: Fortran 90 program for reading and processing occupation vectors.
-(viii) excute1_4000Nih.f90`: Main Fortran 90 program for automating the NiH NEB workflow.
-(ix) resultP1.sh`: Bash script for automated execution.
+- `NiAlH_jea.eam.alloy`: EAM/alloy potential file used for the NiH system.
+- `NEB_OCCUP1.txt`: Occupation-vector data used in configuration generation.
+- `occupation_in_1NNN1.txt`: Occupation-related input data.
+- `in_NIH_initial.eam`: LAMMPS input for initial-structure relaxation.
+- `in_NIH_initial1.eam`: LAMMPS input for final-structure relaxation.
+- `input_NEB`: LAMMPS input for NEB calculations.
+- `print_occupation_4000_files_final.f90`: Fortran 90 program for reading and processing occupation vectors.
+- `excute1_4000Nih.f90`: Main Fortran 90 program for automating the NiH NEB workflow.
+- `resultP1.sh`: Bash script for automated execution.
 
 ## Palladium Hydride (PdH)
 
 The `Pd/` directory contains the corresponding files for the PdH workflow.
 
-(i) PdAgH_HybridPd3Ag.eam.alloy`: EAM/alloy potential file used for the PdH system.
-(ii) NEB_OCCUP1.txt`: Occupation-vector data used in configuration generation.
-(iii) occupation_in_1NNN1.txt`: Occupation-related input data.
-(iv) in_PdH_initial.eam`: LAMMPS input for initial-structure relaxation.
-(v) in_PdH_initial1.eam`: LAMMPS input for final-structure relaxation.
-(vi) input_NEB`: LAMMPS input for NEB calculations.
-(vii) print_occupation_4000_files_final.f90`: Fortran 90 program for reading and processing occupation vectors.
-(viii) excute1_4000PdH.f90`: Main Fortran 90 program for automating the PdH NEB workflow.
-(ix) resultP1.sh`: Bash script for automated execution.
+- `PdAgH_HybridPd3Ag.eam.alloy`: EAM/alloy potential file used for the PdH system.
+- `NEB_OCCUP1.txt`: Occupation-vector data used in configuration generation.
+- `occupation_in_1NNN1.txt`: Occupation-related input data.
+- `in_PdH_initial.eam`: LAMMPS input for initial-structure relaxation.
+- `in_PdH_initial1.eam`: LAMMPS input for final-structure relaxation.
+- `input_NEB`: LAMMPS input for NEB calculations.
+- `print_occupation_4000_files_final.f90`: Fortran 90 program for reading and processing occupation vectors.
+- `excute1_4000PdH.f90`: Main Fortran 90 program for automating the PdH NEB workflow.
+- `resultP1.sh`: Bash script for automated execution.
 
 ## Software Requirements
 
@@ -78,8 +80,15 @@ The exact commands and required settings depend on the source code and simulatio
 ## Usage
 
 Run each material's workflow from its corresponding directory after checking the input paths, potential settings, executable names, and LAMMPS configuration.
-Here for Ni and Pd case x=0.001 shown, for other x values change in the excute1_4000PdH.f90 and excute1_4000Nih.f90 files.
-Before running the scripts, verify that the required input files and LAMMPS executables are available.
+
+The current configuration uses a composition parameter of `x = 0.001` for both NiH and PdH. To investigate other composition values, modify the appropriate Fortran source file:
+
+- NiH: `Ni/excute1_4000Nih.f90`
+- PdH: `Pd/excute1_4000PdH.f90`
+
+Check the source code to identify the relevant parameter and ensure that the generated configurations match the intended composition.
+
+Before running the scripts, verify that the required input files, potential files, compiler, and LAMMPS executables are available.
 
 ## Reproducibility
 
