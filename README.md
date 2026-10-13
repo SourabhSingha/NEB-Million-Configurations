@@ -8,7 +8,9 @@ The workflow uses occupation vectors to define configurations, LAMMPS to relax i
 
 ## Repository Structure
 
-text
+## Repository Structure
+
+```text
 NEB-Million-Configurations/
 ├── README.md
 ├── Ni/
@@ -31,6 +33,8 @@ NEB-Million-Configurations/
     ├── occupation_in_1NNN1.txt
     ├── print_occupation_4000_files_final.f90
     └── resultP1.sh
+```
+
 
 ## Nickel Hydride (NiH)
 
