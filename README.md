@@ -8,8 +8,6 @@ The workflow uses occupation vectors to define configurations, LAMMPS to relax i
 
 ## Repository Structure
 
-## Repository Structure
-
 ```text
 NEB-Million-Configurations/
 ├── README.md
