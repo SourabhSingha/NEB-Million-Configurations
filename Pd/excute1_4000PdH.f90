@@ -17,7 +17,7 @@ PROGRAM NEB_calculation
    CHARACTER(LEN=32) :: initial_occupation_file,final_occupation_file
    REAL :: a,b,c
    L=10
-   a=3.52e0 ! Lattice constant of Ni = 3.52 FOR SMALL H, 50%H Ni=3.66 AND 99.9%H Ni=3.74
+   a=3.89e0 ! Lattice constant of Ni = 3.52 FOR SMALL H, 50%H Ni=3.66 AND 99.9%H Ni=3.74
    b=a/2e0
    c=0.0e0
    !!!! for small anount H addition
@@ -54,12 +54,12 @@ PROGRAM NEB_calculation
 !!!!!!!
   !!!!FOR CHECKING LATTICE CONSTANT VALUE 75% H !!!!!
   
-    XLO=-0.88e0
-  YLO=-0.88e0
-  ZLO=-0.88e0
-  XHI=34.32e0
-  YHI=34.32e0
-  ZHI=34.32e0
+    XLO=-0.9725e0
+  YLO=-0.9725e0
+  ZLO=-0.9725e0
+  XHI=37.9275e0
+  YHI=37.9275e0
+  ZHI=37.9275e0
 
   
 !~     XLO=-0.925e0
@@ -100,11 +100,11 @@ PROGRAM NEB_calculation
   !Step 5. Create LAMMPS file - final configuration 
   CALL CreateLAMMPSfileForRelaxation_final()
   !Step 6. Relax the initial configuration
-  !CALL RelaxUsingLAMMPS('lmp -in in_NIH_initial.eam') !initial
-  CALL SYSTEM('mpirun -np 20 lmp -in in_NIH_initial.eam') !initial
+  !CALL RelaxUsingLAMMPS('lmp -in in_PdH_initial.eam') !initial
+  CALL SYSTEM('mpirun -np 20 lmp -in in_PdH_initial.eam') !initial
   !Step 7. Relax the final configuration
-  !CALL RelaxUsingLAMMPS('lmp -in in_NIH_initial1.eam') !final
-  CALL SYSTEM('mpirun -np 20 lmp -in in_NIH_initial1.eam') !final
+  !CALL RelaxUsingLAMMPS('lmp -in in_PdH_initial1.eam') !final
+  CALL SYSTEM('mpirun -np 20 lmp -in in_PdH_initial1.eam') !final
   !Step 8. Prepare LAMMPS files for NEB calculation
   CALL PrepareForNEB()
   !Step 9. Perform NEB
